@@ -1,3 +1,18 @@
 body{
     padding : 0px 30px 0px 30px;
+    vertical-align: middle;
+}
+
+.bg-1 {
+    background-color: #1abc9c;
+    color: #ffffff;
+}
+.bg-2 {
+    background-color: #474e5d;
+    color: #ffffff;
+}
+
+.container-mine {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }

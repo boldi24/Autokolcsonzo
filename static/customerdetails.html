@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Új autó</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/design.css" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h2>Kölcsönző részletei</h2>
+        </div>
+        <div class="col-md-push-3 col-md-6 col-xs-12">
+            <form>
+                <div class="form-group">
+                    <label for="id">Személyi szám</label>
+                    <input type="text" class="form-control" id="id" value="15335151" placeholder="Személyi szám">
+                </div>
+                <div class="form-group">
+                    <label for="nev">Név</label>
+                    <input type="text" class="form-control" id="nev" value="SSDF SDFDS" placeholder="Név">
+                </div>
+                <div class="form-group">
+                    <label for="lakcim">Lakcím</label>
+                    <input type="text" class="form-control" id="lakcim" value="Budapest" placeholder="Név">
+                </div>
+                <div class="form-group">
+                    <label for="telsz">Telefon szám</label>
+                    <input type="text" class="form-control" id="telsz" value="+33553415" placeholder="Telefon szám">
+                </div>
+                <div class="container">
+                    <label for="telsz">Jogosítvány típus</label>
+                    <form>
+                        <label class="radio-inline">
+                            <input checked="checked" type="radio" name="jarmu">Személygépjármű
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="jarmu">Haszongépjármű
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="jarmu">Motorkerékpár
+                        </label>
+                    </form>
+                </div>
+                <a href="index.html" class="btn btn-primary">Módosítás</a>
+                <a href="index.html" class="btn btn-default">Mégsem</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
