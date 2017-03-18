@@ -1,0 +1,12 @@
+
+/clients/add GET és POST
+/clients/del/:id GET
+/clients/mod/:id GET + POST
+/clients - lista a kölcsönzőkről GET
+/cars/add GET + POST
+/cars/del/:id GET
+/cars/mod/:id GET ÉS POST
+/occopiedcars - lista a foglalt autókról GET
+/freecars - fooldal/szabad autók GET
+/ - fooldal/szabad autók GET
+
