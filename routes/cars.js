@@ -11,6 +11,7 @@ var getOccopiedCarListMW = require('../middlewares/car/getOccopiedCarList');
 var getFreeCarListMW = require('../middlewares/car/getFreeCarList');
 
 var getClientMW = require('../middlewares/client/getClient');
+var getClientListMW = require('../middlewares/client/getClientList');
 
 var clientModel = {};
 var carModel = {};
@@ -39,6 +40,8 @@ module.exports = function (app) {
     );
 
     app.get('/cars/mod/:id',
+        getCarMW(objectRepository),
+        getClientListMW(objectRepository),
         renderMW(objectRepository, 'carmod')
     );
 

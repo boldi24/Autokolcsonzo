@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Új autó</title>
+<%- include('header') %>
 
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.css" rel="stylesheet">
-    <link href="css/design.css" rel="stylesheet">
-</head>
-<body>
-
+<%- include('mainheader') %>
 
 <div class="container">
     <div class="row">
@@ -17,7 +8,7 @@
             <h2>Új autó hozzáadása</h2>
         </div>
         <div class="col-md-push-3 col-md-6 col-xs-12">
-            <form>
+            <form method="post">
                 <div class="form-group">
                     <label for="alvaz">Alvázszám</label>
                     <input type="text" class="form-control" id="alvaz" placeholder="Alvazszam">
@@ -48,19 +39,12 @@
                         <option>4</option>
                     </select>
                 </div>
-                <a href="index.html" class="btn btn-primary">Hozzáadás</a>
-                <a href="index.html" class="btn btn-default">Mégsem</a>
+                <a href="/freecars" class="btn btn-primary">Hozzáadás</a>
+                <a href="/freecars" class="btn btn-default">Mégsem</a>
             </form>
 
         </div>
     </div>
 </div>
 
-
-
-
-
-<script src="js/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
-</body>
-</html>
+<%- include('footer') %>

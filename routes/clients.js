@@ -30,6 +30,7 @@ module.exports = function (app) {
     );
 
     app.get('/clients/mod/:id',
+        getClientMW(objectRepository),
         renderMW(objectRepository, 'clientmod')
     );
 

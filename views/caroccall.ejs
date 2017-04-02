@@ -1,0 +1,23 @@
+<%- include('header') %>
+<% id= 2; %>
+<%- include('mainheader') %>
+
+<div class="text-center">
+    <div class="container">
+        <h2>Foglalt autók:</h2>
+        <div class="col-md-push-3 col-md-6 col-xs-12">
+
+            <% cars.forEach(function(car){ %>
+            <div>
+                <h3><%= car.name%></h3>
+                <h3><%= car.plate%></h3>
+                <a href="/cars/mod/<%= car.id%>"><button class="btn btn-primary">Részletek</button></a>
+                <button class="btn btn-danger">Törlés</button>
+            </div>
+            <%}); %>
+
+        </div>
+    </div>
+</div>
+
+<%- include('footer') %>

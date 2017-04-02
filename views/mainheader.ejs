@@ -1,0 +1,17 @@
+<div class="jumbotron text-center">
+    <h1>Kovács járműkölcsönző</h1>
+    <p>Vidd el a kocsit, de azért hozd is vissza!</p>
+</div>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Járműkölcsönző</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li <% if(id == 1) {%>class="active" <%}%>><a href="/freecars">Szabad autók</a></li>
+            <li <% if(id == 2) {%>class="active" <%}%>><a href="/occopiedcars">Foglalt autók</a></li>
+            <li <% if(id == 3) {%>class="active" <%}%>><a href="/clients">Kölcsönzők</a></li>
+        </ul>
+    </div>
+</nav>

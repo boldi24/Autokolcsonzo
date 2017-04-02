@@ -1,0 +1,25 @@
+<%- include('header') %>
+<% id= 3; %>
+<%- include('mainheader') %>
+
+<div class="container-mine text-center">
+    <a href="/clients/add"><button class="btn btn-primary">Új kölcsönző hozzáadása</button></a>
+</div>
+
+<div class="text-center">
+    <div class="container">
+        <h2>Regisztrált kölcsönzők:</h2>
+        <div class="col-md-push-3 col-md-6 col-xs-12">
+        <% clients.forEach(function(client){ %>
+            <div>
+            <h3><%= client.name%></h3>
+            <h3><%= client.phone%></h3>
+            <a href="/clients/mod/<%= client.id%>"><button class="btn btn-primary">Részletek</button></a>
+            <button class="btn btn-danger">Törlés</button>
+            </div>
+        <%}); %>
+        </div>
+    </div>
+</div>
+
+<%- include('footer') %>

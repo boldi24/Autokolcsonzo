@@ -6,7 +6,9 @@
 module.exports = function () {
 
     return function (req, res, next) {
-        return next();
+
+        return res.redirect('/freecars');
+
     };
 
 };

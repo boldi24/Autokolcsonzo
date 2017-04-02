@@ -1,0 +1,67 @@
+<%- include('header') %>
+
+<%- include('mainheader') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h2><%= car.name%> jármű részletei</h2>
+        </div>
+        <div class="col-md-push-3 col-md-6 col-xs-12">
+            <form>
+                <div class="form-group">
+                    <label for="alvaz">Alvázszám</label>
+                    <input type="text" class="form-control" id="alvaz" value="<%= car.chassisnum%>" placeholder="Alvazszam">
+                </div>
+                <div class="form-group">
+                    <label for="rendszam">Alvázszám</label>
+                    <input type="text" class="form-control" id="rendszam" value="<%= car.plate%>" placeholder="Rendszam">
+                </div>
+                <div class="container">
+                    <form>
+                        <label class="radio-inline">
+                            <input <% if(car.type == 'B') { %> checked="checked" <% } %> type="radio" name="jarmu">Személygépjármű
+                        </label>
+                        <label class="radio-inline">
+                            <input <% if(car.type == 'C') { %> checked="checked" <% } %> type="radio" name="jarmu">Haszongépjármű
+                        </label>
+                        <label class="radio-inline">
+                            <input <% if(car.type == 'A') { %> checked="checked" <% } %> type="radio" name="jarmu">Motorkerékpár
+                        </label>
+                    </form>
+                </div>
+                <div class="form-group">
+                    <label for="ajtok">Ajtók száma</label>
+                    <select class="form-control" id="ajtok">
+                        <% for (i=1; i<=4; i++){ %>
+                            <option <% if(car.doors === i) { %> selected="selected" <%}%>><%= i %></option>
+                        <%}%>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="kezdet">Kölcsönzés kezdete</label>
+                    <input type="text" class="form-control" id="kezdet" value="<%= car.start%>" placeholder="Kölcsönzés kezdete">
+                </div>
+                <div class="form-group">
+                    <label for="vege">Kölcsönzés vége</label>
+                    <input type="text" class="form-control" id="vege" value="<%= car.end%>" placeholder="Kölcsönzés vége">
+                </div>
+                <div class="form-group">
+                    <label for="kolcsonzo">Aktuális kölcsönző</label>
+                    <select class="form-control" id="kolcsonzo">
+                        <option <% if (car.currClient === 'undefined') { %> selected="selected" <%}%>>Nincs kölcsönözve!</option>
+                        <% clients.forEach(function(client){ %>
+                        <option <% if (car.currClient !== 'undefined' && client.id == car.currClient) { %> selected="selected" <%}%>><%= client.name%></option>
+                         <%}); %>
+                    </select>
+                </div>
+                <a href="index.html" class="btn btn-primary">Módosítás</a>
+                <a href="index.html" class="btn btn-default">Mégsem</a>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<%- include('footer') %>
+
