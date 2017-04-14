@@ -1,5 +1,5 @@
 <%- include('header') %>
-
+<% page = 'clients'; %>
 <%- include('mainheader') %>
 
 <div class="container">
@@ -8,40 +8,37 @@
             <h2>Új kölcsönző hozzáadása</h2>
         </div>
         <div class="col-md-push-3 col-md-6 col-xs-12">
-            <form method="post">
+            <form method="POST">
                 <div class="form-group">
-                    <label for="id">Személyi szám</label>
-                    <input type="text" class="form-control" id="id" placeholder="Személyi szám">
+                    <label for="nationalId">Személyi szám</label>
+                    <input name="nationalId" type="text" class="form-control" id="nationalId" placeholder="Személyi szám">
                 </div>
                 <div class="form-group">
-                    <label for="nev">Név</label>
-                    <input type="text" class="form-control" id="nev" placeholder="Név">
+                    <label for="name">Név</label>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Név">
                 </div>
                 <div class="form-group">
-                    <label for="lakcim">Lakcím</label>
-                    <input type="text" class="form-control" id="lakcim" placeholder="Név">
+                    <label for="address">Lakcím</label>
+                    <input name="address" type="text" class="form-control" id="address" placeholder="Lakcím">
                 </div>
                 <div class="form-group">
-                    <label for="telsz">Telefonszám</label>
-                    <input type="text" class="form-control" id="telsz" placeholder="Telefonszám">
+                    <label for="phone">Telefonszám</label>
+                    <input name="phone" type="text" class="form-control" id="phone" placeholder="Telefonszám">
                 </div>
                 <div class="container">
-                    <form>
-                        <label class="radio-inline">
-                            <input type="radio" name="jarmu">Személygépjármű
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="jarmu">Haszongépjármű
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="jarmu">Motorkerékpár
-                        </label>
-                    </form>
+                    <label class="radio-inline">
+                        <input type="radio" name="car" value="B">Személygépjármű
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="car" value="C">Haszongépjármű
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="car" value="A">Motorkerékpár
+                    </label>
                 </div>
-                <a href="/clients" class="btn btn-primary">Hozzáadás</a>
+                <input type="submit" class="btn btn-primary" value="Hozzáadás">
                 <a href="/clients" class="btn btn-default">Mégsem</a>
             </form>
-
         </div>
     </div>
 </div>

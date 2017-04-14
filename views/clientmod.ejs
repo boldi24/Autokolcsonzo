@@ -21,9 +21,9 @@
             <a class="navbar-brand" href="#">Járműkölcsönző</a>
         </div>
         <ul class="nav navbar-nav">
-            <li <% if(id == 1) {%>class="active" <%}%>><a href="/freecars">Szabad autók</a></li>
-            <li <% if(id == 2) {%>class="active" <%}%>><a href="/occopiedcars">Foglalt autók</a></li>
-            <li <% if(id == 3) {%>class="active" <%}%>><a href="/clients">Kölcsönzők</a></li>
+            <li <% if(page === 'freecars') {%>class="active" <%}%>><a href="/freecars">Szabad autók</a></li>
+            <li <% if(page === 'occupiedcars') {%>class="active" <%}%>><a href="/occopiedcars">Foglalt autók</a></li>
+            <li <% if(page === 'clients') {%>class="active" <%}%>><a href="/clients">Kölcsönzők</a></li>
         </ul>
     </div>
 </nav>
@@ -34,38 +34,36 @@
             <h2>Kölcsönző részletei</h2>
         </div>
         <div class="col-md-push-3 col-md-6 col-xs-12">
-            <form>
+            <form method="post">
                 <div class="form-group">
-                    <label for="id">Személyi szám</label>
-                    <input type="text" class="form-control" id="id" value="<%= client.nationalId%>" placeholder="Személyi szám">
+                    <label for="nationalId">Személyi szám</label>
+                    <input name="nationalId" type="text" class="form-control" id="nationalId" value="<%= client.nationalId%>" placeholder="Személyi szám">
                 </div>
                 <div class="form-group">
-                    <label for="nev">Név</label>
-                    <input type="text" class="form-control" id="nev" value="<%= client.name %>" placeholder="Név">
+                    <label for="name">Név</label>
+                    <input name="name" type="text" class="form-control" id="name" value="<%= client.name %>" placeholder="Név">
                 </div>
                 <div class="form-group">
-                    <label for="lakcim">Lakcím</label>
-                    <input type="text" class="form-control" id="lakcim" value="<%= client.address%>" placeholder="Lakcím">
+                    <label for="address">Lakcím</label>
+                    <input name="address" type="text" class="form-control" id="address" value="<%= client.address%>" placeholder="Lakcím">
                 </div>
                 <div class="form-group">
-                    <label for="telsz">Telefon szám</label>
-                    <input type="text" class="form-control" id="telsz" value="<%= client.phone%>" placeholder="Telefon szám">
+                    <label for="phone">Telefon szám</label>
+                    <input name="phone" type="text" class="form-control" id="phone" value="<%= client.phone%>" placeholder="Telefon szám">
                 </div>
                 <div class="container">
-                    <label for="telsz">Jogosítvány típus</label>
-                    <form>
+                    <label>Jogosítvány típus</label>
                         <label class="radio-inline">
-                            <input <% if(client.licence == 'B') { %> checked="checked" <% } %> type="radio" name="jarmu">Személygépjármű
+                            <input <% if(client.licence == 'B') { %> checked="checked" <% } %> type="radio" name="car" value="B">Személygépjármű
                         </label>
                         <label class="radio-inline">
-                            <input <% if(client.licence == 'C') { %> checked="checked" <% } %> type="radio" name="jarmu">Haszongépjármű
+                            <input <% if(client.licence == 'C') { %> checked="checked" <% } %> type="radio" name="car" value="C">Haszongépjármű
                         </label>
                         <label class="radio-inline">
-                            <input <% if(client.licence == 'A') { %> checked="checked" <% } %> type="radio" name="jarmu">Motorkerékpár
+                            <input <% if(client.licence == 'A') { %> checked="checked" <% } %> type="radio" name="car" value="A">Motorkerékpár
                         </label>
-                    </form>
                 </div>
-                <a href="/clients" class="btn btn-primary">Módosítás</a>
+                <a href="/clients/mod/<%= client._id%>"><button class="btn btn-danger">Módosítás</button></a>
                 <a href="/clients" class="btn btn-default">Mégsem</a>
             </form>
 

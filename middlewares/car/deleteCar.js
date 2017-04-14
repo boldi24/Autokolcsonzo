@@ -11,7 +11,18 @@ module.exports = function (objectRepository) {
     var carModel = requireOption(objectRepository, 'carModel');
 
     return function (req, res, next) {
-        return next();
+
+        if(typeof  res.tpl.car === 'undefined'){
+            return next();
+        }
+
+        res.tpl.car.remove(function (err) {
+            if(err){
+                return next(err);
+            }
+
+            return next();
+        });
     }
 
 };

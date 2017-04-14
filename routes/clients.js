@@ -6,7 +6,7 @@ var getClientListMW = require('../middlewares/client/getClientList');
 var deleteClientMW = require('../middlewares/client/deleteClient');
 var getClientMW = require('../middlewares/client/getClient');
 
-var clientModel = {};
+var clientModel = require('../models/client');
 
 module.exports = function (app) {
 
@@ -25,8 +25,11 @@ module.exports = function (app) {
     );
 
     app.get('/clients/del/:id',
-        getClientListMW(objectRepository),
-        deleteClientMW(objectRepository)
+        getClientMW(objectRepository),
+        deleteClientMW(objectRepository),
+        function (req, res, next) {
+            return res.redirect('/clients');
+        }
     );
 
     app.get('/clients/mod/:id',

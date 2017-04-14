@@ -1,5 +1,5 @@
 <%- include('header') %>
-<% id= 3; %>
+<% page = 'clients'; %>
 <%- include('mainheader') %>
 
 <div class="container-mine text-center">
@@ -14,8 +14,8 @@
             <div>
             <h3><%= client.name%></h3>
             <h3><%= client.phone%></h3>
-            <a href="/clients/mod/<%= client.id%>"><button class="btn btn-primary">Részletek</button></a>
-            <button class="btn btn-danger">Törlés</button>
+            <a href="/clients/mod/<%= client._id%>"><button class="btn btn-primary">Részletek</button></a>
+            <a href="/clients/del/<%= client._id%>"><button class="btn btn-danger">Törlés</button></a>
             </div>
         <%}); %>
         </div>

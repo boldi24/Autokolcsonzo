@@ -9,9 +9,9 @@
             <a class="navbar-brand" href="#">Járműkölcsönző</a>
         </div>
         <ul class="nav navbar-nav">
-            <li <% if(id == 1) {%>class="active" <%}%>><a href="/freecars">Szabad autók</a></li>
-            <li <% if(id == 2) {%>class="active" <%}%>><a href="/occopiedcars">Foglalt autók</a></li>
-            <li <% if(id == 3) {%>class="active" <%}%>><a href="/clients">Kölcsönzők</a></li>
+            <li <% if(page === 'freecars') {%>class="active" <%}%>><a href="/freecars">Szabad autók</a></li>
+            <li <% if(page === 'occupiedcars') {%>class="active" <%}%>><a href="/occopiedcars">Foglalt autók</a></li>
+            <li <% if(page === 'clients') {%>class="active" <%}%>><a href="/clients">Kölcsönzők</a></li>
         </ul>
     </div>
 </nav>

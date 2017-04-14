@@ -13,35 +13,27 @@ module.exports = function (objectRepository) {
 
     return function (req, res, next) {
 
-        var client1 = {
-            id: 1,
-            name: 'Geza',
-            phone: '+3630123456789',
-            nationalId: 'SDFSDFSDF',
-            address: 'Budpaest fő utca 2',
-            licence: 'B'
-        };
-
-        var client2 = {
-            id: 2,
-            name: 'Józsi',
-            phone: '+36301232256789',
-            nationalId: 'SDFSDFSDF',
-            address: 'Budpaest fő utca 6',
-            licence: 'C'
-        };
-
-        var id = req.params.id;
-
-        if(id == 1){
-            res.tpl.client = client1;
-        } else if (id == 2){
-            res.tpl.client = client2;
+        var id = "";
+        if(typeof req.body.currClient !== 'undefined'){
+            id = req.body.currClient;
+        } else if(typeof req.params.id !== 'undefined'){
+            id = req.params.id;
         } else{
-            return res.redirect('/clients');
+            return next();
         }
 
-        return next();
-    }
+        clientModel.findOne({
+            _id: id
+        }, function (err, result) {
+            console.log('log: ' + result);
+            if((err) || (!result)){
+                return res.redirect('/clients');
+            }
+
+            res.tpl.client = result;
+            return next();
+        });
+
+    };
 
 };

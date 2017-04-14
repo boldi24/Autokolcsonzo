@@ -11,33 +11,15 @@ module.exports = function (objectRepository) {
 
     return function (req, res, next) {
 
-        var freeCars = [];
+        carModel.find({ state : "free"}, function (err, result) {
+            if(err){
+                return next(new Error('Error getting cars'));
+            }
 
-        var car3 = {
-            id: 3,
-            name: "Porshe",
-            plate: "ASD-151",
-            state: "free",
-            chassisnum: "sdfsd545",
-            type: "B",
-            doors: 3
-        };
-        freeCars.push(car3);
+            res.tpl.cars = result;
+            return next();
+        });
 
-        var car4 = {
-            id: 4,
-            name: "Audi",
-            plate: "ASD-555",
-            state: "free",
-            chassisnum: "dfgdf",
-            type: "C",
-            doors: 2
-        };
-        freeCars.push(car4);
-
-        res.tpl.cars = freeCars;
-
-        return next();
     }
 
 };

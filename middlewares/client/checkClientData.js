@@ -10,6 +10,9 @@ module.exports = function (objectRepository) {
     var clientModel = requireOption(objectRepository, 'clientModel');
 
     return function (req, res, next) {
+
+        console.log('checking...');
+
         return next();
     }
 

@@ -1,5 +1,5 @@
 <%- include('header') %>
-
+<% page = 'freecars' %>
 <%- include('mainheader') %>
 
 <div class="container">
@@ -10,36 +10,38 @@
         <div class="col-md-push-3 col-md-6 col-xs-12">
             <form method="post">
                 <div class="form-group">
-                    <label for="alvaz">Alvázszám</label>
-                    <input type="text" class="form-control" id="alvaz" placeholder="Alvazszam">
+                    <label for="name">Név</label>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Név">
                 </div>
                 <div class="form-group">
-                    <label for="rendszam">Rendszám</label>
-                    <input type="text" class="form-control" id="rendszam" placeholder="Rendszam">
+                    <label for="chassisnum">Alvázszám</label>
+                    <input name="chassisnum" type="text" class="form-control" id="chassisnum" placeholder="Alvazszam">
+                </div>
+                <div class="form-group">
+                    <label for="plate">Rendszám</label>
+                    <input name="plate" type="text" class="form-control" id="plate" placeholder="Rendszam">
                 </div>
                 <div class="container">
-                    <form>
-                        <label class="radio-inline">
-                            <input type="radio" name="jarmu">Személygépjármű
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="jarmu">Haszongépjármű
-                        </label>
-                        <label class="radio-inline">
-                            <input type="radio" name="jarmu">Motorkerékpár
-                        </label>
-                    </form>
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="B" >Személygépjármű
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="C" >Haszongépjármű
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="type" value="A" >Motorkerékpár
+                    </label>
                 </div>
                 <div class="form-group">
                     <label for="ajtok">Ajtók száma</label>
-                    <select class="form-control" id="ajtok">
+                    <select name="doors" class="form-control" id="doors">
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
                     </select>
                 </div>
-                <a href="/freecars" class="btn btn-primary">Hozzáadás</a>
+                <input type="submit" class="btn btn-primary" value="Hozzáadás">
                 <a href="/freecars" class="btn btn-default">Mégsem</a>
             </form>
 

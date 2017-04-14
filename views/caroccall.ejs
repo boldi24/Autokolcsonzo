@@ -1,5 +1,5 @@
 <%- include('header') %>
-<% id= 2; %>
+<% page = 'occupiedcars' %>
 <%- include('mainheader') %>
 
 <div class="text-center">
@@ -11,8 +11,8 @@
             <div>
                 <h3><%= car.name%></h3>
                 <h3><%= car.plate%></h3>
-                <a href="/cars/mod/<%= car.id%>"><button class="btn btn-primary">Részletek</button></a>
-                <button class="btn btn-danger">Törlés</button>
+                <a href="/cars/mod/<%= car._id%>"><button class="btn btn-primary">Részletek</button></a>
+                <a href="/cars/del/<%= car._id%>"><button class="btn btn-danger">Törlés</button></a>
             </div>
             <%}); %>
 

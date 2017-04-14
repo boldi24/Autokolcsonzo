@@ -13,9 +13,8 @@ var getFreeCarListMW = require('../middlewares/car/getFreeCarList');
 var getClientMW = require('../middlewares/client/getClient');
 var getClientListMW = require('../middlewares/client/getClientList');
 
-var clientModel = {};
-var carModel = {};
-
+var clientModel = require('../models/client');
+var carModel = require('../models/car');
 
 module.exports = function (app) {
 
@@ -35,8 +34,11 @@ module.exports = function (app) {
     );
 
     app.get('/cars/del/:id',
-        getCarListMW(objectRepository),
-        deleteCarMW(objectRepository)
+        getCarMW(objectRepository),
+        deleteCarMW(objectRepository),
+        function (req, res, next) {
+            return res.redirect('back');
+        }
     );
 
     app.get('/cars/mod/:id',
