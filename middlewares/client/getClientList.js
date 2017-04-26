@@ -14,8 +14,6 @@ module.exports = function (objectRepository) {
                 return next(new Error('Error getting clients'));
             }
 
-            console.log(result);
-
             res.tpl.clients = result;
             return next();
         });

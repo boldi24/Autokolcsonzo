@@ -11,32 +11,12 @@ module.exports = function (objectRepository) {
 
     return function (req, res, next) {
 
-        if(
-            (typeof req.body.name === 'undefined') ||
-            (typeof req.body.nationalId === 'undefined') ||
-            (typeof req.body.phone === 'undefined') ||
-            (typeof req.body.address === 'undefined') ||
-            (typeof req.body.car === 'undefined')
-        ){
-            console.log('SSSSSSSSS');
-            return next();
+
+        if(res.tpl.client === 'undefined'){
+            return next(new Error('There is nothing to be saved!'));
         }
 
-        var client = undefined;
-
-        if(typeof res.tpl.client === 'undefined'){
-            client = new clientModel();
-        } else {
-            client = res.tpl.client;
-        }
-
-        client.name = req.body.name;
-        client.nationalId = req.body.nationalId;
-        client.phone = req.body.phone;
-        client.address = req.body.address;
-        client.licence = req.body.car;
-
-        client.save(function (err, result) {
+        res.tpl.client.save(function (err, result) {
            if(err){
                return err;
            }

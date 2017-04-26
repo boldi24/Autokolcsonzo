@@ -12,8 +12,8 @@ module.exports = function (objectRepository) {
 
     return function (req, res, next) {
 
-        if(typeof  res.tpl.car === 'undefined'){
-            return next();
+        if(res.tpl.car === 'undefined'){
+            return next(new Error('There is no car to deleted!'));
         }
 
         res.tpl.car.remove(function (err) {

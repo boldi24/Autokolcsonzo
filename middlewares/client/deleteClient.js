@@ -11,8 +11,8 @@ module.exports = function (objectRepository) {
 
     return function (req, res, next) {
 
-        if(typeof  res.tpl.client === 'undefined'){
-            return next();
+        if(res.tpl.client === 'undefined'){
+            return next(new Error('There is nothing to be deleted!'));
         }
 
         res.tpl.client.remove(function (err) {

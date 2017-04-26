@@ -49,9 +49,9 @@ module.exports = function (app) {
 
     app.post('/cars/mod/:id',
         getCarMW(objectRepository),
+        getClientMW(objectRepository),
         checkCarDataMW(objectRepository),
         validateCarDataMW(objectRepository),
-        getClientMW(objectRepository),
         checkIfClientAuthorizedToDriveMW(objectRepository),
         saveCarMW(objectRepository)
     );

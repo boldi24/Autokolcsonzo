@@ -37,7 +37,7 @@ require('./routes/main')(app);
  * Standard error handler
  */
 app.use(function (err, req, res, next) {
-    res.status(500).send('Error!');
+    res.status(500).send('Error:' + err);
 
     //Flush out the stack to the console
     console.error(err.stack);

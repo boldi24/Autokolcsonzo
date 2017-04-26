@@ -10,6 +10,25 @@
         <div class="col-md-push-3 col-md-6 col-xs-12">
             <form method="post">
                 <div class="form-group">
+                    <label for="name">Név</label>
+                    <input readonly name="name" type="text" class="form-control" id="name" value="<%= car.name%>"  placeholder="Név">
+                </div>
+                <div class="form-group">
+                    <label for="chassis">Alvázszám</label>
+                    <input readonly name="chassis" type="text" class="form-control" id="chassis" value="<%= car.chassisnum%>" placeholder="Alvazszam">
+                </div>
+                <div class="container">
+                    <label class="radio-inline">
+                    <input <% if(car.type == 'B') { %> checked="checked" <% } %> type="radio" name="jarmu">Személygépjármű
+                    </label>
+                    <label class="radio-inline">
+                    <input <% if(car.type == 'C') { %> checked="checked" <% } %> type="radio" name="jarmu">Haszongépjármű
+                    </label>
+                    <label class="radio-inline">
+                    <input <% if(car.type == 'A') { %> checked="checked" <% } %> type="radio" name="jarmu">Motorkerékpár
+                    </label>
+                </div>
+                <div class="form-group">
                     <label for="plate">Rendszám</label>
                     <input name="plate" type="text" class="form-control" id="plate" value="<%= car.plate%>" placeholder="Rendszam">
                 </div>
