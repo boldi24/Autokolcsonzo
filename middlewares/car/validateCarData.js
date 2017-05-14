@@ -14,7 +14,7 @@ module.exports = function (objectRepository) {
         //licence plate
         var plateRegex = new RegExp("[A-Z]{3}-[0-9]{3}");
         if(res.tpl.car.plate.length === 0 || !plateRegex.test(res.tpl.car.plate)){
-            return next(new Error('Licence plate does not have the correct format!'));
+            return next(new Error('Licence plate does not have the correct format! Example: ABC-123'));
         }
 
         if(res.tpl.car.state === 'occupied' &&

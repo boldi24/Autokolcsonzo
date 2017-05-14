@@ -4,7 +4,8 @@
   "description": "Szerver oldali JS feladat. Autókölcsönző létrehozása.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./test --recursive"
+    "test": "mocha ./test --recursive",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
