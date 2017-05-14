@@ -1,2 +1,2 @@
-# Autokolcsonzo
-Szerver oldali JS feladat. Autókölcsönző létrehozása.
+# Website for an imaginary car rental agency
+Homework for the NodeJS course at BME.
