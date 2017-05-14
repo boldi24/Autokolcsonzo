@@ -7,7 +7,7 @@ module.exports = function (objectRepository) {
 
     return function (req, res, next) {
 
-        if(res.tpl.cars === 'undefined'){
+        if(typeof res.tpl.cars === 'undefined' || typeof res.tpl.client === 'undefined'){
             return next(new Error('Cant check if client assigned to car!'));
         }
 
